@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Form</title>
+</head>
+<body>
+    <h1>{{ form.instance.pk|default:"New" }} Text</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'text_list' %}">Back to list</a>
+</body>
+</html>
